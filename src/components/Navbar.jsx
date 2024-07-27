@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Link, Menu, MenuItem } from "@mui/material";
+import { Stack, Typography, Box, Link, Menu, MenuItem } from "@mui/material";
 import { Home, Search, Notifications, Person, Add } from "@mui/icons-material";
 
 const Navbar = () => {
@@ -10,11 +10,6 @@ const Navbar = () => {
 	};
 	const handleClose = () => {
 		setAnchorEl(null);
-	};
-
-	const Profile = () => {
-		setAnchorEl(null);
-		window.location.replace(`../users/${user.id}`);
 	};
 
 	return (
@@ -29,11 +24,13 @@ const Navbar = () => {
 				justifyContent: "space-evenly",
 			}}
 		>
-			<Typography variant="h4">Welcome</Typography>
-			<Typography variant="h4">Skills</Typography>
-			<Typography variant="h4">Experience</Typography>
-			<Typography variant="h4">Projects</Typography>
-			<Typography variant="h4">About me</Typography>
+			<Stack sx={{flexDirection: "row", }}>
+				<Typography variant="navbar" >Welcome</Typography>
+				<Typography variant="navbar" >Skills</Typography>
+				<Typography variant="navbar" >Experience</Typography>
+				<Typography variant="navbar" >Projects</Typography>
+				<Typography variant="navbar" >About me</Typography>
+			</Stack>
 		</Box>
 	);
 };
